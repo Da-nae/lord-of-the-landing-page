@@ -3,10 +3,9 @@ import { useRef, useState } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-
 export default function Model({z}) {
     const ref = useRef();
-    const {nodes, materials} = useGLTF('/assets/models/ring-v2-transformed.glb');
+    const { nodes, materials } = useGLTF('/assets/models/ring-v2-transformed.glb');
     const { viewport, camera } = useThree();
     const { width, height } = viewport.getCurrentViewport(camera, [0, 0, z]);
     const [data] = useState({

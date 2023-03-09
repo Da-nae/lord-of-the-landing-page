@@ -1,8 +1,6 @@
 import { useTransition, animated } from "react-spring";
 import { IoLogoGithub } from "react-icons/io5";
 
-const headings = ["Home", "About", "Contact"];
-
 const MobileNav = ({ open }) => {
 
   const transition = useTransition(open, {
@@ -15,7 +13,6 @@ const MobileNav = ({ open }) => {
       opacity: 1,
       transformMain: "translateY(0px)",
       transformFoot: "translateY(0px)",
-
     },
     leave: {
       opacity: 0,
@@ -28,13 +25,6 @@ const MobileNav = ({ open }) => {
     return visible ? (
         <animated.nav style={{ opacity }} className="mobile-nav">
           <div className="content-wrapper">
-            <animated.ul style={{ transform: transformMain }} className="list">
-              {headings.map((heading) => (
-                  <li className="list-item" key={heading}>
-                    {heading}
-                  </li>
-              ))}
-            </animated.ul>
             <animated.div
                 className="icon-wrapper"
                 style={{ transform: transformFoot }}
